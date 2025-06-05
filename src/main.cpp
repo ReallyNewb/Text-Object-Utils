@@ -16,7 +16,7 @@ class $modify(EditTextLayer, CustomizeObjectLayer) {
 
     bool init(GameObject* p0, CCArray* p1) {
         if (!CustomizeObjectLayer::init(p0, p1)) return false;
-        
+    
         auto defaultInput = m_textInput;
         if (!m_textInput) return true;
 
