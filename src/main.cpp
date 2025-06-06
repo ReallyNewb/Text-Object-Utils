@@ -32,7 +32,8 @@ class $modify(EditTextLayer, CustomizeObjectLayer) {
         defaultInput->setPositionY(500.0f); // fuck you im lazy
         this->getChildByIDRecursive("clear-text-button")->setPositionY(500.0f);
         
-        m_textButton->activate();
+        if (Loader::get()->isModLoaded("hjfod.betteredit")) this->scheduleOnce(schedule_selector(EditTextLayer::openTextMenu), 0);
+        else openTextMenu(0);
 
 
         auto input = TextInput::create(200.0f, "");
@@ -110,5 +111,9 @@ class $modify(EditTextLayer, CustomizeObjectLayer) {
         auto input = m_fields->newTextInput;
         if (!input) return;
         input->setString("", true);
+    }
+
+    void openTextMenu(float dt) {
+        if (auto button = m_textButton) button->activate();
     }
 };
