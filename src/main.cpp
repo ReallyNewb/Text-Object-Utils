@@ -36,7 +36,7 @@ class $modify(EditTextLayer, CustomizeObjectLayer) {
         else openTextMenu(0);
 
 
-        auto input = TextInput::create(200.0f, "");
+        auto input = TextInput::create(200.0f, "", m_kerningLabel->getFntFile());
         input->setPosition(defaultInputBG->getPositionX(), defaultInputBG->getPositionY() - 20);
         auto inputPos = input->getPosition();
         input->setCommonFilter(CommonFilter::Any);
